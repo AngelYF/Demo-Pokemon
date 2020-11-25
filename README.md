@@ -1,2 +1,2 @@
 # Demo-Pokemon
-Demo basada en Pokémon Ruby para aprender sobre desarrollo de videojuegos.
+Demo basada en el videojuego de Pokémon Ruby para aprender sobre el desarrollo de videojuegos.
