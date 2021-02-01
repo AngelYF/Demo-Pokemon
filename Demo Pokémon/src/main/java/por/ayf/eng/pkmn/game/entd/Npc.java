@@ -1,7 +1,6 @@
 package por.ayf.eng.pkmn.game.entd;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,10 +43,10 @@ public class Npc extends Entity {
 	
 	protected void loadTextures() {
 		try {
-			this.textures.put("frente", ImageIO.read(new File("src/main/resources/images/textures/characters/others/" + this.characterName + "_frente.png")));
-			this.textures.put("izquierda", ImageIO.read(new File("src/main/resources/images/textures/characters/others/" + this.characterName + "_izquierda.png")));
-			this.textures.put("derecha", ImageIO.read(new File("src/main/resources/images/textures/characters/others/" + this.characterName + "_derecha.png")));
-			this.textures.put("espalda", ImageIO.read(new File("src/main/resources/images/textures/characters/others/" + this.characterName + "_espalda.png")));
+			this.textures.put("frente", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_frente.png")));
+			this.textures.put("izquierda", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_izquierda.png")));
+			this.textures.put("derecha", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_derecha.png")));
+			this.textures.put("espalda", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_espalda.png")));
 		}
 		catch(IOException e) {
 			e.printStackTrace();

@@ -36,7 +36,7 @@ public class ViewMainWindow extends JFrame {
 	
 	private void initComponents() {
 		this.setTitle("Demo de Pok\u00E9mon");
-		this.setIconImage(Toolkit.getDefaultToolkit().getImage("src/main/resources/images/icons/Icon.png"));
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/icons/Icon.png")));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 		this.setBounds(0, 0, WIDTH, HIGH);
@@ -50,8 +50,8 @@ public class ViewMainWindow extends JFrame {
 		
 		/* ABOUT THIS PART:
 		 * 
-		 * Uno de los problemas en esta demo, es la gestión de eventos cuando se presiona una tecla. Como no s� realmente como controlar de una manera apropiada
-		 * he optado por una soluci�n bastante chapuza, pero que en un futuro espero corregir. 
+		 * Uno de los problemas en esta demo, es la gestión de eventos cuando se presiona una tecla. Como no sé realmente como controlar de una manera apropiada
+		 * he optado por una solución bastante chapuza, pero que en un futuro espero corregir. 
 		 */
 		
 		this.addKeyListener(new KeyAdapter() {

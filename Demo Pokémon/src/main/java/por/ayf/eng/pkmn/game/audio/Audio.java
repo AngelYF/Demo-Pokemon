@@ -1,7 +1,5 @@
 package por.ayf.eng.pkmn.game.audio;
 
-import java.io.File;
-
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
@@ -24,7 +22,7 @@ public class Audio {
 	public static void playSound(Clip audio, String name) {
 		try {
 			audio = AudioSystem.getClip();
-			audio.open(AudioSystem.getAudioInputStream(new File("src/main/resources/sounds/" + name)));
+			audio.open(AudioSystem.getAudioInputStream(Audio.class.getResource("/sounds/" + name)));
 		} 
 		catch (Exception e) {
 			e.printStackTrace();
@@ -44,7 +42,7 @@ public class Audio {
 	public static void playBackgroundMusic(Clip audio, String name, int start, int end) {
 		try {
 			audio = AudioSystem.getClip();
-			audio.open(AudioSystem.getAudioInputStream(new File("src/main/resources/music/" + name)));
+			audio.open(AudioSystem.getAudioInputStream(Audio.class.getResource("/music/" + name)));
 		} 
 		catch (Exception e) {
 			e.printStackTrace();

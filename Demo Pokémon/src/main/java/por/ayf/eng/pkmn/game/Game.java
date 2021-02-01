@@ -662,7 +662,7 @@ public class Game extends Canvas {
 						this.inDialog = true;
 						this.lastText = true;
 						Audio.playSound(sound, "Choose.wav");
-						this.text1 = "No se puede leer desde esta posici�n.";
+						this.text1 = "No se puede leer desde esta posición.";
 						this.text2 = "";
 					}
 					break;
@@ -934,7 +934,7 @@ public class Game extends Canvas {
 	
 	private void loadMap(String name) {
 		try {
-			this.map.setBufferedMap(ImageIO.read(new File("src/main/resources/images/textures/map/" + name)));
+			this.map.setBufferedMap(ImageIO.read(getClass().getResource("/images/textures/map/" + name)));
 		} 
 		catch (IOException e) {
 			e.printStackTrace();
@@ -947,7 +947,7 @@ public class Game extends Canvas {
 	
 	private void loadResources() {
 		try {
-			this.textBox = ImageIO.read(new File("src/main/resources/images/textures/miscellaneous/Textbox.png"));
+			this.textBox = ImageIO.read(getClass().getResource("/images/textures/miscellaneous/Textbox.png"));
 			
 			// Install the font.
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
