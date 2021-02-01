@@ -1,18 +1,4 @@
 Manifest-Version: 1.0
-Main-Class: Principal.Main
-
-Name: Principal/
 Sealed: true
-
-Name: Demo/
-Sealed: true
-
-Name: Demo/Personaje/
-Sealed: true
-
-Name: Demo/Mapa/
-Sealed: true
-
-Name: Interfaz/
-Sealed: true
+Main-Class: por.ayf.eng.pkmn.app.ApplicationMain
 
