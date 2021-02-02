@@ -34,7 +34,7 @@
 		        <configuration>
 		            <archive>
 		                <manifest>
-		                    <mainClass>por.ayf.eng.tetris.app.ApplicationMain</mainClass>
+		                    <mainClass>por.ayf.eng.pkmn.app.ApplicationMain</mainClass>
 		                </manifest>
 		            </archive>
 		        </configuration>

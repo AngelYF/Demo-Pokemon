@@ -951,7 +951,7 @@ public class Game extends Canvas {
 			
 			// Install the font.
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/main/resources/fonts/pkmndp.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(getClass().getResource("/fonts/pkmndp.ttf").getPath())));
 		}
 		catch(IOException e) {
 			e.printStackTrace();
