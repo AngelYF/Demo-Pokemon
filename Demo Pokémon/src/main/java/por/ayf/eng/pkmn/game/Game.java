@@ -20,6 +20,7 @@ import por.ayf.eng.pkmn.game.entd.Player;
 import por.ayf.eng.pkmn.game.entd.Npc;
 import por.ayf.eng.pkmn.game.entd.Object;
 import por.ayf.eng.pkmn.game.map.MapM;
+import por.ayf.eng.pkmn.util.Util;
 import por.ayf.eng.pkmn.game.map.Map;
 import por.ayf.eng.pkmn.view.ViewMainWindow;
 
@@ -103,8 +104,7 @@ public class Game extends Canvas {
 		
 		if(this.inMovement) {
 			drawMovement(graphics);
-		}
-		else {
+		} else {
 			drawScreen(graphics);
 		}
 	}
@@ -178,8 +178,7 @@ public class Game extends Canvas {
 				
 				if(npc.getYPosition() < this.player.getYPosition()) {  
 					graphics.drawImage(npc.getTextures().get(npc.getState()), npc.getXAbsolutePosition(), npc.getYAbsolutePosition(), null);
-				}
-				else { 
+				} else { 
 					if(drawed == false) {
 						drawed = true;
 						drawPlayer(graphics);
@@ -258,12 +257,10 @@ public class Game extends Canvas {
 					
 					try {
 						Thread.sleep(500);
-					} 
-					catch (InterruptedException e) {
-						e.printStackTrace();
+					} catch (InterruptedException ex) {
+						Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 					}
-				}
-				else {
+				} else {
 					for(int i = 1; i <= 4; i++) {
 						
 						this.map.setBufferedSubmap(this.bufferedGame.getSubimage(this.map.getXPositionCamera() * SIZE, (this.map.getYPositionCamera() * SIZE) + (SIZE / 2) - 10 - (i * 8), ViewMainWindow.WIDTH, ViewMainWindow.HIGH));
@@ -289,9 +286,8 @@ public class Game extends Canvas {
 						
 						try {
 							Thread.sleep(100);
-						} 
-						catch (InterruptedException e) {
-							e.printStackTrace();
+						} catch (InterruptedException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 						}
 					}
 					
@@ -313,12 +309,10 @@ public class Game extends Canvas {
 					
 					try {
 						Thread.sleep(500);
-					} 
-					catch (InterruptedException e) {
-						e.printStackTrace();
+					} catch (InterruptedException ex) {
+						Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 					}
-				}
-				else {
+				} else {
 					for(int i = 1; i <= 4; i++) {
 						
 						this.map.setBufferedSubmap(this.bufferedGame.getSubimage(this.map.getXPositionCamera() * SIZE - (i * 8), (this.map.getYPositionCamera() * SIZE) + (SIZE / 2) - 10, ViewMainWindow.WIDTH, ViewMainWindow.HIGH));
@@ -344,9 +338,8 @@ public class Game extends Canvas {
 						
 						try {
 							Thread.sleep(100);
-						} 
-						catch (InterruptedException e) {
-							e.printStackTrace();
+						} catch (InterruptedException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 						}
 					}
 					this.player.setXPosition(this.player.getXPosition() - 1);
@@ -367,12 +360,10 @@ public class Game extends Canvas {
 					
 					try {
 						Thread.sleep(500);
-					} 
-					catch (InterruptedException e) {
-						e.printStackTrace();
+					} catch (InterruptedException ex) {
+						Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 					}
-				}
-				else {
+				} else {
 					for(int i = 1; i <= 4; i++) {
 						
 						this.map.setBufferedSubmap(this.bufferedGame.getSubimage(this.map.getXPositionCamera() * SIZE + (i * 8), (this.map.getYPositionCamera() * SIZE) + (SIZE / 2) - 10, ViewMainWindow.WIDTH, ViewMainWindow.HIGH));
@@ -398,9 +389,8 @@ public class Game extends Canvas {
 						
 						try {
 							Thread.sleep(100);
-						} 
-						catch (InterruptedException e) {
-							e.printStackTrace();
+						} catch (InterruptedException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 						}
 					}
 					
@@ -422,12 +412,10 @@ public class Game extends Canvas {
 					
 					try {
 						Thread.sleep(500);
-					} 
-					catch (InterruptedException e) {
-						e.printStackTrace();
+					} catch (InterruptedException ex) {
+						Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 					}
-				}
-				else {
+				} else {
 					for(int i = 1; i <= 4; i++) {
 						
 						this.map.setBufferedSubmap(this.bufferedGame.getSubimage(this.map.getXPositionCamera() * SIZE, (this.map.getYPositionCamera() * SIZE) + (SIZE / 2) - 10 + (i * 8), ViewMainWindow.WIDTH, ViewMainWindow.HIGH));
@@ -453,9 +441,8 @@ public class Game extends Canvas {
 						
 						try {
 							Thread.sleep(100);
-						} 
-						catch (InterruptedException e) {
-							e.printStackTrace();
+						} catch (InterruptedException ex) {
+							Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error en el hilo de ejecución.", Game.class, ex);
 						}
 					}
 					this.player.setYPosition(this.player.getYPosition() + 1);
@@ -512,13 +499,11 @@ public class Game extends Canvas {
 											this.indexTexts = j;
 											this.countDiag = 0;
 											break;
-										}
-										else {
+										} else {
 											if(this.countDiag == 0) { 
 												this.text1 = npc.getTexts().get(j);
 												this.countDiag++;
-											}
-											else if(this.countDiag == 1) {
+											} else if(this.countDiag == 1) {
 												this.text2 = npc.getTexts().get(j);
 												this.countDiag++;
 											}
@@ -531,8 +516,7 @@ public class Game extends Canvas {
 									
 									break; 
 								}
-							}
-							else if(this.map.getElements().get(i) instanceof Object) {
+							} else if(this.map.getElements().get(i) instanceof Object) {
 								Object obj = (Object) this.map.getElements().get(i);
 								
 								if(this.player.getYPosition() - 1 == obj.getYPosition() && this.player.getXPosition() == obj.getXPosition()) {
@@ -542,13 +526,11 @@ public class Game extends Canvas {
 											this.indexTexts = j;
 											this.countDiag = 0;
 											break;
-										}
-										else {
+										} else {
 											if(this.countDiag == 0) {
 												this.text1 = obj.getTexts().get(j);
 												this.countDiag++;
-											}
-											else if(this.countDiag == 1) {
+											} else if(this.countDiag == 1) {
 												this.text2 = obj.getTexts().get(j);
 												this.countDiag++;
 											}
@@ -585,13 +567,11 @@ public class Game extends Canvas {
 											this.indexTexts = j;
 											this.countDiag = 0;
 											break;
-										}
-										else {
+										} else {
 											if(this.countDiag == 0) {
 												this.text1 = npc.getTexts().get(j);
 												this.countDiag++;
-											}
-											else if(this.countDiag == 1) {
+											} else if(this.countDiag == 1) {
 												this.text2 = npc.getTexts().get(j);
 												this.countDiag++;
 											}
@@ -607,8 +587,7 @@ public class Game extends Canvas {
 						}
 						
 						Audio.playSound(sound, "Choose.wav");
-					}
-					else if(MapM.matrixLittlerootTown[this.player.getYPosition()][this.player.getXPosition() - 1] == 2) {
+					} else if(MapM.matrixLittlerootTown[this.player.getYPosition()][this.player.getXPosition() - 1] == 2) {
 						this.inDialog = true;
 						this.lastText = true;
 						Audio.playSound(sound, "Choose.wav");
@@ -635,13 +614,11 @@ public class Game extends Canvas {
 											this.indexTexts = j;
 											this.countDiag = 0;
 											break;
-										}
-										else {
+										} else {
 											if(this.countDiag == 0) {
 												this.text1 = npc.getTexts().get(j);
 												this.countDiag++;
-											}
-											else if(this.countDiag == 1) {
+											} else if(this.countDiag == 1) {
 												this.text2 = npc.getTexts().get(j);
 												this.countDiag++;
 											}
@@ -657,8 +634,7 @@ public class Game extends Canvas {
 						}
 						
 						Audio.playSound(sound, "Choose.wav");
-					}
-					else if(MapM.matrixLittlerootTown[this.player.getYPosition()][this.player.getXPosition() + 1] == 2) {
+					} else if(MapM.matrixLittlerootTown[this.player.getYPosition()][this.player.getXPosition() + 1] == 2) {
 						this.inDialog = true;
 						this.lastText = true;
 						Audio.playSound(sound, "Choose.wav");
@@ -685,13 +661,11 @@ public class Game extends Canvas {
 											this.indexTexts = j;
 											this.countDiag = 0;
 											break;
-										}
-										else {
+										} else {
 											if(this.countDiag == 0) {
 												this.text1 = npc.getTexts().get(j);
 												this.countDiag++;
-											}
-											else if(this.countDiag == 1) {
+											} else if(this.countDiag == 1) {
 												this.text2 = npc.getTexts().get(j);
 												this.countDiag++;
 											}
@@ -707,8 +681,7 @@ public class Game extends Canvas {
 						}
 						
 						Audio.playSound(sound, "Choose.wav");
-					}
-					else if(MapM.matrixLittlerootTown[this.player.getYPosition() + 1][this.player.getXPosition()] == 2) {
+					} else if(MapM.matrixLittlerootTown[this.player.getYPosition() + 1][this.player.getXPosition()] == 2) {
 						this.inDialog = true;
 						this.lastText = true;
 						this.countDiag = 0;
@@ -719,8 +692,7 @@ public class Game extends Canvas {
 					}
 					break;
 			}
-		}
-		else { 
+		} else { 
 			if(this.lastText == false) {
 				
 				switch(this.player.getPosition()) {
@@ -739,13 +711,11 @@ public class Game extends Canvas {
 												this.indexTexts = j;
 												this.countDiag = 0;
 												break;
-											}
-											else {
+											} else {
 												if(this.countDiag == 0) {
 													this.text1 = npc.getTexts().get(j);
 													this.countDiag++;
-												}
-												else if(this.countDiag == 1) {
+												} else if(this.countDiag == 1) {
 													this.text2 = npc.getTexts().get(j);
 													this.countDiag++;
 												}
@@ -759,8 +729,7 @@ public class Game extends Canvas {
 										Audio.playSound(sound, "Choose.wav");
 										break;
 									}
-								}
-								else if(this.map.getElements().get(i) instanceof Object) {
+								} else if(this.map.getElements().get(i) instanceof Object) {
 									Object obj = (Object) this.map.getElements().get(i);
 									
 									if(this.player.getYPosition() - 1 == obj.getYPosition() && this.player.getXPosition() == obj.getXPosition()) {
@@ -769,13 +738,11 @@ public class Game extends Canvas {
 												this.indexTexts = j;
 												this.countDiag = 0;
 												break;
-											}
-											else {
+											} else {
 												if(this.countDiag == 0) {
 													this.text1 = obj.getTexts().get(j);
 													this.countDiag++;
-												}
-												else if(this.countDiag == 1) {
+												} else if(this.countDiag == 1) {
 													this.text2 = obj.getTexts().get(j);
 													this.countDiag++;
 												}
@@ -808,13 +775,11 @@ public class Game extends Canvas {
 												this.indexTexts = j;
 												this.countDiag = 0;
 												break;
-											}
-											else {
+											} else {
 												if(this.countDiag == 0) {
 													this.text1 = npc.getTexts().get(j);
 													this.countDiag++;
-												}
-												else if(this.countDiag == 1) {
+												} else if(this.countDiag == 1) {
 													this.text2 = npc.getTexts().get(j);
 													this.countDiag++;
 												}
@@ -848,13 +813,11 @@ public class Game extends Canvas {
 												this.indexTexts = j;
 												this.countDiag = 0;
 												break;
-											}
-											else {
+											} else {
 												if(this.countDiag == 0) {
 													this.text1 = npc.getTexts().get(j);
 													this.countDiag++;
-												}
-												else if(this.countDiag == 1) {
+												} else if(this.countDiag == 1) {
 													this.text2 = npc.getTexts().get(j);
 													this.countDiag++;
 												}
@@ -888,13 +851,11 @@ public class Game extends Canvas {
 												this.indexTexts = j;
 												this.countDiag = 0;
 												break;
-											}
-											else {
+											} else {
 												if(this.countDiag == 0) {
 													this.text1 = npc.getTexts().get(j);
 													this.countDiag++;
-												}
-												else if(this.countDiag == 1) {
+												} else if(this.countDiag == 1) {
 													this.text2 = npc.getTexts().get(j);
 													this.countDiag++;
 												}
@@ -914,8 +875,7 @@ public class Game extends Canvas {
 						}
 						break;
 				}
-			}
-			else {
+			} else {
 				this.inDialog = false;
 				this.countDiag = 0;
 				this.indexTexts = 0;
@@ -935,9 +895,8 @@ public class Game extends Canvas {
 	private void loadMap(String name) {
 		try {
 			this.map.setBufferedMap(ImageIO.read(getClass().getResource("/images/textures/map/" + name)));
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al leer una textura.", Game.class, ex);
 		}	
 	}
 	
@@ -952,12 +911,10 @@ public class Game extends Canvas {
 			// Install the font.
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
 			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File(getClass().getResource("/fonts/pkmndp.ttf").getPath())));
-		}
-		catch(IOException e) {
-			e.printStackTrace();
-		} 
-		catch (FontFormatException e) {
-			e.printStackTrace();
+		} catch(IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al leer una textura.", Game.class, ex);
+		} catch (FontFormatException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al crear una font.", Game.class, ex);
 		}
 	}
 	

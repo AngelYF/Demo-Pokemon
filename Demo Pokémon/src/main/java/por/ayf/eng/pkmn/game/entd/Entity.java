@@ -26,9 +26,9 @@ public abstract class Entity extends Element {
 	}
 
 	/**
-	 *  M�todo que asigna una nueva imagen act�al.
+	 *  Method will assign a new current texture of a entity.
 	 * 
-	 *  @param currentTexture nueva.
+	 *  @param currentTexture: new texture.
 	 */
 	
 	public void setCurrentTexture(BufferedImage currentTexture) {

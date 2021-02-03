@@ -7,6 +7,7 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import por.ayf.eng.pkmn.game.Game;
+import por.ayf.eng.pkmn.util.Util;
 
 /**
  *  Class that define the player of the game.
@@ -56,9 +57,8 @@ public class Player extends Entity {
 			this.textures.put("derecha_2", ImageIO.read(getClass().getResource("/images/textures/characters/player/Protagonista_derecha_2.png")));
 			this.textures.put("derecha_3", ImageIO.read(getClass().getResource("/images/textures/characters/player/Protagonista_derecha_3.png")));
 			this.textures.put("derecha_4", ImageIO.read(getClass().getResource("/images/textures/characters/player/Protagonista_derecha_4.png")));
-		} 
-		catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al leer una textura.", Player.class, ex);
 		}
 	}
 

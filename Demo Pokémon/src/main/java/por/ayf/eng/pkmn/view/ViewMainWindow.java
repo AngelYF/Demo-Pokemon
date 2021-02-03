@@ -35,7 +35,7 @@ public class ViewMainWindow extends JFrame {
 	}
 	
 	private void initComponents() {
-		this.setTitle("Demo de Pok\u00E9mon");
+		this.setTitle("Demo de Pokémon");
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/icons/Icon.png")));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
@@ -78,8 +78,7 @@ public class ViewMainWindow extends JFrame {
 		        			game.dialog();
 		        			break;
 	        		}
-	        	}
-	        	else {
+	        	} else {
 	        		numberPulses++;
 	        	}
 	        }

@@ -7,6 +7,7 @@ import java.util.HashMap;
 import javax.imageio.ImageIO;
 
 import por.ayf.eng.pkmn.game.Game;
+import por.ayf.eng.pkmn.util.Util;
 
 /**
  *  Class that define a non played character of the game.
@@ -47,9 +48,8 @@ public class Npc extends Entity {
 			this.textures.put("izquierda", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_izquierda.png")));
 			this.textures.put("derecha", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_derecha.png")));
 			this.textures.put("espalda", ImageIO.read(getClass().getResource("/images/textures/characters/others/" + this.characterName + "_espalda.png")));
-		}
-		catch(IOException e) {
-			e.printStackTrace();
+		} catch(IOException ex) {
+			Util.logMessage(Util.LEVEL_ERROR, "Ha ocurrido un error al leer una textura.", Npc.class, ex);
 		}
 	}
 
