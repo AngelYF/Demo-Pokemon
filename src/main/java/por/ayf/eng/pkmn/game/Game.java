@@ -229,9 +229,9 @@ public class Game extends Canvas {
     }
 
     /**
-     * Méthod que cambiará las posiciones del jugador según al sitio donde se mueva.
+     * Method that will change the player's positions depending on where they move.
      *
-     * @param graphics para pintar en el canvas.
+     * @param graphics to paint the canvas.
      */
 
     private void drawMovement(Graphics graphics) {
@@ -1046,6 +1046,4 @@ public class Game extends Canvas {
             this.graphicGame = (Graphics2D) this.bufferedGame.getGraphics();
         }
     }
-
-
 }
